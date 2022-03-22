@@ -1,0 +1,14 @@
+{
+    "firstName":"Aaa",
+    "middleName":"Bbb",
+    "lastName":"Ccc",
+    "address":{
+        "country":"Indonesia",
+        "city":"Malang"
+    },
+    "hobbies":[
+        "Coding",
+        "Gaming",
+        "Traveling"
+    ]
+}

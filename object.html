@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Object</title>
+</head>
+<body>
+<script>
+
+    {
+        // object freeze & seal
+
+        const person = {
+            firstName: "Aaa",
+            lastName: "Bbb"
+        };
+
+        // freeze dan seal tidak dapat menambah data
+        // Jika object freeze data tidak berubah sama sekali walaupun ada properti yang di delete
+        // Jika object seal data berubah tapi tetap tidak menghapus data
+
+        Object.freeze(person);
+        // Object.seal(person);
+
+        person.firstName = "Ccc";
+        person.middleName = "Ddd";
+        delete person.lastName;
+
+        console.info(person);
+    }
+
+    {
+
+        // object assign
+
+        const target = {
+            firstName: "Eee"
+        };
+        const source = {
+            lastName: "Fff"
+        };
+
+        Object.assign(target, source);
+        console.info(target);
+        console.info(source);
+
+    }
+
+    {
+
+        // Object property name & value
+
+        const person = {
+            firstName: "Ggg",
+            lastName: "Hhh"
+        };
+
+        console.info(Object.values(person));
+        console.info(Object.getOwnPropertyNames(person));
+
+    }
+
+</script>
+</body>
+</html>

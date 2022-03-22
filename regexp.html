@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>RegExp</title>
+</head>
+<body>
+<script>
+
+    {
+        //create regex
+
+        const regex1 = /aaa/;
+        const regex2 = new RegExp("aaa");
+        const regex3 = new RegExp(/aaa/);
+    }
+
+    {
+
+        // test regex
+
+        const name = "aaa bbb ccc ddd";
+        const regex = /eko/;
+
+        const result = regex.exec(name);
+        console.info(result);
+        console.info(regex.exec("tidak ada"));
+
+        const test = regex.test(name);
+        console.info(test);
+        console.info(regex.test("tidak ada"));
+
+    }
+
+    {
+
+        //regex modifier
+
+        const name = "aaa bbb\nAaa ddd\nCcc Bbb";
+
+        // i = penulisan tidak sensitif, g = global(pencarian ke semua), m = pencarian ketika ada multilines
+        // jika menggunakan perulangan untuk mendapatkan global beri kode g (global) agar tidak terjadi infinity loop
+        const regex1 = /^c.c/igm
+        const regex2 = /Bbb/ig
+
+        let result;
+        while ((result = regex1.exec(name)) !== null) {
+            console.info(result);
+        }
+
+        while ((result = regex2.exec(name)) !== null) {
+            console.info(result);
+        }
+
+    }
+
+    {
+
+        // advanced regex
+
+        const regex = /eb[ioaeu]/ig
+
+        const name = "ebo ebi eba ebu ebe eco ebo ebi";
+        let result;
+        while ((result = regex.exec(name)) !== null) {
+            console.info(result);
+        }
+
+    }
+
+    {
+
+        const name = "edo ebo ebi eba ebu ebe edo ebo ebi";
+
+        console.info(name.match(/eb[aiueo]/ig));
+        console.info(name.search(/eb[aiueo]/ig));
+        console.info(name.replace(/eb[aiueo]/i, "u"));
+        console.info(name.replaceAll(/eb[aiueo]/ig, "u"));
+        console.info(name.split(/e/ig));
+
+    }
+
+</script>
+</body>
+</html>

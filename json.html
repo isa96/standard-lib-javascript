@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JSON</title>
+</head>
+<body>
+
+<script>
+
+    const person = {
+        firstName: "Aaa",
+        middleName: "Bbb",
+        lastName: "Ccc",
+        address : {
+            country: "Indonesia",
+            city: "Malang"
+        },
+        hobbies: [
+            "Coding", "Gaming", "Traveling"
+        ]
+    };
+
+    // Konversi object to string
+    const json = JSON.stringify(person);
+    console.info(json);
+
+    // Konversi string to object
+    const jsonObject = JSON.parse(json);
+    console.info(jsonObject);
+
+</script>
+
+</body>
+</html>
